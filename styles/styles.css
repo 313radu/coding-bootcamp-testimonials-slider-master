@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body .pattern-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#picture {
+  transition: filter 0.8s ease, opacity 0.8s ease; /* Smoother and longer transition */
+}
+
+.blur {
+  filter: blur(20px); /* Increased blur for smoother transition */
+  opacity: 0.6; /* Fade out the image */
+}
+
+article {
+  min-width: 23.438em;
+  max-width: 90em;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+article .content-section {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+article .content-section .quotes {
+  position: absolute;
+  top: -7%;
+  left: 30%;
+}
+article .content-section .description {
+  width: 110%;
+  height: 250px;
+  font-size: clamp(1rem, 0.4718rem + 2.2535vw, 2.3rem);
+  font-weight: 300;
+  margin-inline-start: 3em;
+  color: hsl(240, 38%, 20%);
+  z-index: 100;
+  line-height: 45px;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+}
+article .content-section .name-box {
+  width: 80%;
+  display: flex;
+  text-wrap: nowrap;
+  z-index: 100;
+  display: flex;
+  flex-shrink: 3;
+  margin-inline: clamp(10px, 5vw, 120px);
+}
+article .content-section .name-box .name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: hsl(240, 38%, 20%);
+  padding-left: 1.5em;
+}
+article .content-section .name-box .job {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: hsl(240, 18%, 77%);
+  margin-left: 0.8em;
+}
+article .picture-section {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+article .picture-section .element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+article .buttons {
+  width: 130px;
+  height: 50px;
+  position: absolute;
+  bottom: 12%;
+  left: 40%;
+  border-radius: 3em;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0px 20px 15px 1px hsla(240, 37%, 20%, 0.293);
+}
+article .buttons button {
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  outline: none;
+}
+article .buttons button i {
+  font-size: 1rem;
+}
+
+@media (width < 53.125em) {
+  body {
+    height: auto;
+  }
+  body .pattern-curve {
+    width: 100%;
+    height: 100px;
+  }
+  article {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+  }
+  article .content-section {
+    order: 2;
+    width: 100%;
+    height: 50%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  article .content-section .quotes {
+    transform: scale(0.5);
+    top: 40px;
+    left: 35%;
+  }
+  article .content-section .description {
+    width: 100%;
+    height: 200px;
+    margin-inline-start: 0;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  article .content-section .name-box {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto auto;
+  }
+  article .content-section .name-box .name, article .content-section .name-box .job {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-inline: 0 0;
+    font-size: 1rem;
+  }
+  article .picture-section {
+    width: 100%;
+    height: 50%;
+    order: 1;
+    position: relative;
+    padding-top: 2em;
+  }
+  article .picture-section img.element {
+    width: 90%;
+    height: 80%;
+  }
+  article .picture-section svg.element path {
+    transform: scale(0.7) translate(10%, 25%);
+  }
+  article .picture-section .buttons {
+    left: 35%;
+    bottom: 20px;
+  }
+}
+@media (height < 500px) {
+  article {
+    width: 400px;
+  }
+}/*# sourceMappingURL=styles.css.map */
